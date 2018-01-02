@@ -7,7 +7,7 @@ echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | 
 add-apt-repository -y ppa:webupd8team/java
 
 apt-get update
-apt-get install -y --force-yes oracle-java8-installer
+apt-get install -y --force-yes oracle-java8-installer &&  rm -rf /var/cache/oracle-jdk8-installer
 
 # Chromium dependencies
 apt-get install -y gconf-service \
@@ -53,3 +53,5 @@ apt-get install -y gconf-service \
 apt-get install -y curl
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt-get install -y nodejs
+
+rm -rf /var/lib/apt/lists/*
