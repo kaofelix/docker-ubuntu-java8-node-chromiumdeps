@@ -9,6 +9,10 @@ add-apt-repository -y ppa:webupd8team/java
 apt-get update
 apt-get install -y --force-yes oracle-java8-installer &&  rm -rf /var/cache/oracle-jdk8-installer
 
+apt-get install -y python-pip
+pip install awscli
+apt-get remove -y python-pip
+
 # Chromium dependencies
 apt-get install -y gconf-service \
                    libasound2 \
